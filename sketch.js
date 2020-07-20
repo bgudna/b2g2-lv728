@@ -2,6 +2,8 @@ var cols, rows;
 var cellBlock = 40;
 var grid = [];
 
+var currentCell;
+
 function setup() {
     createCanvas(400, 400);
     background(25,31,49);
@@ -15,6 +17,8 @@ function setup() {
         }    
     }
 
+    currentCell = grid[5];
+
     //pointer = new Point(100, 100);
 }
 
@@ -23,6 +27,8 @@ function draw() {
     for(var i = 0; i < grid.length; i++){
         grid[i].show();
     }
+
+    currentCell.visited = true;
     // pointer.render();
     // pointer.step();
 }
@@ -31,6 +37,7 @@ function Cell(w,h) {
     this.w = w;
     this.h = h;
     this.walls = [true, true, true, true];
+    this.visited = false;
 
     this.show = function() {
         var x = this.w*cellBlock;
@@ -49,6 +56,11 @@ function Cell(w,h) {
         }
         if(this.walls[3]) {
             line(x,y+cellBlock, x, y);
+        }
+
+        if(this.visited) {
+            fill(255,234,55);
+            rect(x, y, cellBlock, cellBlock);
         }
     } 
 }
