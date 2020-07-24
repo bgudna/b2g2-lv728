@@ -5,10 +5,12 @@ var grid = [];
 var currentCell;
 
 function setup() {
-    createCanvas(400, 400);
-    background(25,31,49);
+    createCanvas(600, 450);
+    
     cols = floor(width/cellBlock);
     rows = floor(height/cellBlock);
+
+    background(25,31,49);
 
     for (x = 0; x < rows; x++) {
         for (y = 0; y < cols; y++) {
