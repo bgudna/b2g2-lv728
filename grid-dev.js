@@ -20,10 +20,7 @@ function setup() {
     }
 
     currentCell = grid[5];
-
-    //pointer = new Point(100, 100);
 }
-
 
 function draw() {
     for(var i = 0; i < grid.length; i++){
@@ -31,8 +28,7 @@ function draw() {
     }
 
     currentCell.visited = true;
-    // pointer.render();
-    // pointer.step();
+
 }
 
 function Cell(w,h) {
